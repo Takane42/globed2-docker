@@ -5,7 +5,7 @@ Im Bored thats why
 ## To Do List
 
 1. Push Image to Github
-2. Need to make central-conf.json configureable via Environment
+2. Need to make central-conf.json configurable via Environment
 3. Readable Documentation
 
 ## How to use
