@@ -4,8 +4,9 @@ Im Bored thats why
 
 ## To Do List
 
-1. Need to make central-conf.json configureable via Environment
-2. Readable Documentation
+1. Push Image to Github
+2. Need to make central-conf.json configureable via Environment
+3. Readable Documentation
 
 ## How to use
 
@@ -14,3 +15,6 @@ Just Run `docker compose up -d` and you're good to go.
 
 ### Bridged
 1. Uncomment the `GLOBED_GS_CENTRAL_URL` and `GLOBED_GS_CENTRAL_PASSWORD`
+
+
+[Official Globed2 Repository](https://github.com/dankmeme01/globed2)
