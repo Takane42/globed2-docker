@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  standalone:
+    image: globed2-server:latest-alpine
+    depends_on:
+      - central
+    ports:
+      - 41001:41001
+      - 41001:41001/udp
+    environment:
+      - TZ=Asia/Jakarta
+#      - GLOBED_GS_CENTRAL_URL=http://central:41000
+#      - GLOBED_GS_CENTRAL_PASSWORD=changeme
+#  central:
+#    image: globed2-server:latest-central-alpine
+#    ports:
+#      - 41000:41000
+#    environment:
+#      - TZ=Asia/Jakarta
+#    volumes:
+#      - ./central-conf.json:/home/globe/central-conf.json:ro

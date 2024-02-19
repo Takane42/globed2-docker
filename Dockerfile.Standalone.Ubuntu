@@ -1,0 +1,28 @@
+# Use ubuntu:22.04 as image base
+FROM ubuntu:22.04
+
+# Set environment for running the server
+ENV GLOBED_GS_ADDRESS='0.0.0.0'
+ENV GLOBED_GS_PORT='41001'
+
+# Installing dependencies
+RUN apt update && apt install -y wget curl
+
+# Create and change default user for security purpose
+RUN adduser --disabled-password globe
+WORKDIR /home/globe
+USER globe
+
+# Download the standalone server and make it executeable
+RUN curl -s https://api.github.com/repos/dankmeme01/globed2/releases/latest \
+    | grep -E 'browser_download.*game*.*x64' \
+    | cut -d : -f 2,3 \
+    | tr -d '"' \
+    | wget -qi - \
+    && mv globed-game-server-* game-server \
+    && chmod +x game-server
+
+# Expose the port needed and start the server
+EXPOSE 41001/tcp
+EXPOSE 41001/udp
+ENTRYPOINT [ "./game-server" ]
